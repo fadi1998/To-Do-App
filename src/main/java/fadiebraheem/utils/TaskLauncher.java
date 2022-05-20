@@ -40,6 +40,8 @@ public class TaskLauncher {
             System.out.print("Pick An Option: ");
 
             option = in.nextInt();
+
+            System.out.println("\n\n");
             switch (option) {
                 case 1:
                     //region View task
@@ -99,11 +101,11 @@ public class TaskLauncher {
                     System.out.println("Enter The ID you Wish To Edit");
                     id = in.next();
 
-                    String updatedContent = Task.tasks.get(id).getContent();
-                    String updatedDate  = Task.tasks.get(id).getDate();
-                    Bson updatedDocument;
-
                     if(Task.tasks.containsKey(id)) {
+                        String updatedContent = Task.tasks.get(id).getContent();
+                        String updatedDate  = Task.tasks.get(id).getDate();
+                        Bson updatedDocument;
+
                         System.out.println("do you wish to change the content Y/N?");
                         in.nextLine();
                         if(in.nextLine().equalsIgnoreCase("Y")) {
@@ -151,6 +153,8 @@ public class TaskLauncher {
                         Task.tasks.put(id,new Task(updatedContent, updatedDate, updateStatus));
                         System.out.println("Edited successfully");
                     }
+                    else
+                        System.out.println("ID not found");
                     break;
                     //endregion
                 default:
