@@ -1,3 +1,4 @@
 # To-Do-App
 
-This is a To-Do-App built using Java and MongoDB database
+## it was built using Java without any GUI library.
+## And uses MongoDB Atlas Cloud Server with the provider: Google Cloud Platform.
